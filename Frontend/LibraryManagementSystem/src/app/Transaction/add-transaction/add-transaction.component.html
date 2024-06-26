@@ -1,0 +1,23 @@
+<div class="container">
+    <form #myform="ngForm" (submit)="addTransaction(myform.value)">
+        <div>
+            <label for="customerID">Customer Id:</label>
+            <input type="number" id="customerID" name="customerID" ngModel required>
+        </div>
+        <div>
+            <label for="bookID">Book Id:</label>
+            <input type="number" id="bookID" name="bookID" ngModel required>
+        </div>
+        <div>
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate" ngModel required>
+        </div>
+        <div>
+            <label for="returnDate">Return Date:</label>
+            <input type="date" id="returnDate" name="returnDate" ngModel >
+        </div>
+        <div>
+            <input type="submit" value="Add Transaction" >
+        </div>
+    </form>
+</div>

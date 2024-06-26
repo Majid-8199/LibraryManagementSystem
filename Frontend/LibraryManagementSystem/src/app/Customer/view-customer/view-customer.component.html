@@ -1,0 +1,39 @@
+<div class="head">
+    <h1>Customers List</h1>
+    <div>
+        <button class="deletebutton" (click)="addCustomer()">Add Customer</button>
+    </div>
+</div>
+<div class="search">
+    <input [(ngModel)]="customerid" type="type" placeholder="Enter Custoer ID">
+    <button (click)="searchCustomer(customerid)">Search</button>
+</div>
+<div class="bottom">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of CustomerList">
+                <td>{{e.customerid}}</td>
+                <td>{{e.firstname}}</td> 
+                <td>{{e.lastname}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.ph}}</td>
+                <td>
+                    <div class="actionbuttons">
+                        <button (click)="updateCustomerById(e.customerid)" class="updateid">Update</button>
+                        <button (click)="deleteCustomerById(e.customerid)" class="deleteid">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

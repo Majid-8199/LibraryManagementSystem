@@ -1,0 +1,41 @@
+<div class="head">
+    <h1>Transactions List</h1>
+    <div>
+        <button class="deletebutton" (click)="addTransaction()">Add Transaction</button>
+    </div>
+</div>
+<div class="search">
+    <input [(ngModel)]="transactionid" type="type" placeholder="Enter Custoer ID">
+    <button (click)="searchTransaction(transactionid)">Search</button>
+</div>
+<div class="bottom">
+    <table>
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Customer ID</th>
+                <th>Book ID</th>
+                <th>Transaction Date</th>
+                <th>Due Date</th>
+                <th>Return Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of TransactionList">
+                <td>{{e.transactionID}}</td>
+                <td>{{e.bookID}}</td>
+                <td>{{e.customerID}}</td>
+                <td>{{e.transactionDate}}</td>
+                <td>{{e.dueDate}}</td>
+                <td>{{e.returnDate}}</td>
+                <td>
+                    <div class="actionbuttons">
+                        <button (click)="updateTransactionById(e.transactionID)" class="updateid">Update</button>
+                        <button (click)="deleteTransactionById(e.transactionID)" class="deleteid">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

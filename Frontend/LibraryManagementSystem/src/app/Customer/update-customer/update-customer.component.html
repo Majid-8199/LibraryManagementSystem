@@ -1,0 +1,25 @@
+<div class="container">
+    <h3>Customer ID: {{customerId}}</h3>
+    <form #myform="ngForm">
+        <div>
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" [(ngModel)]="customer.firstname">
+        </div>
+        <div>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" [(ngModel)]="customer.lastname">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" [(ngModel)]="customer.email">
+        </div>
+        <div>
+            <label for="ph">Mobile Number:</label>
+            <input type="number" id="ph" name="ph" [(ngModel)]="customer.ph">
+        </div>
+        <div>
+            <input type="submit" value="Update Employee" (click)="updateCustomerById(customerId,myform.value)">
+            <button type="button" (click)="goBack()">Back</button>
+        </div>
+    </form>
+</div>

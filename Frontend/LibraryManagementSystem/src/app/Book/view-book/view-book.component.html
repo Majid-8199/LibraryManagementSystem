@@ -1,0 +1,35 @@
+<div class="head">
+    <h1>Books List</h1>
+    <div>
+        <button class="deletebutton" (click)="addBook()">Add Book</button>
+    </div>
+</div>
+<div class="search">
+    <input [(ngModel)]="BookName" type="type" placeholder="Enter Book Name">
+    <button (click)="searchBook(BookName)">Search</button>
+</div>
+<div class="bottom">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Author Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of BookList">
+                <td>{{e.bookID}}</td>
+                <td>{{e.book}}</td> 
+                <td>{{e.author}}</td>
+                <td>
+                    <div class="actionbuttons">
+                        <button (click)="updateBookById(e.bookID)" class="updateid">Update</button>
+                        <button (click)="deleteBookById(e.bookID)" class="deleteid">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

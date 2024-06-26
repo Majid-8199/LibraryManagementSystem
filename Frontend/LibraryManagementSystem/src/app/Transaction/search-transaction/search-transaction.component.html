@@ -1,0 +1,27 @@
+<div class="head">
+    <h1>Transaction Details</h1>
+    <div>
+        <button class="deletebutton" (click)="updateTransaction(TransactionID)">Update Employee</button>
+        <button class="deletebutton" (click)="deleteTransaction(TransactionID)">Delete Employee</button>
+    </div>
+</div>
+<div class="search">
+    <input [(ngModel)]="TransactionId" type="number" placeholder="Enter Employee ID">
+    <button (click)="searchTransaction(TransactionId)">Search</button>
+</div>
+<div class="bottom" *ngIf="transaction && book && customer">
+    <ul>
+        <li>Transaction Id: {{transaction.transactionID}}</li>
+        <li>Customer Id: {{transaction.customerID}}</li>
+        <li>Customer Name: {{customer.firstname}} {{customer.lastname}}</li>
+        <li>Mobile: {{customer.ph}}</li>
+        <li>Book Id: {{transaction.bookID}}</li>
+        <li>Book Name: {{book.book}}</li>
+        <li>Transaction Date: {{transaction.dueDate}}</li>
+        <li>Due Date: {{transaction.dueDate}}</li>
+        <li>Return Date: {{transaction.returnDate}}</li>
+    </ul>
+</div>
+<div *ngIf="!transaction || !book || !customer">
+    <p>Loading transaction details...</p>
+</div>

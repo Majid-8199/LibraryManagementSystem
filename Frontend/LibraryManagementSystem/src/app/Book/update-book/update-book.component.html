@@ -1,0 +1,17 @@
+<div class="container">
+    <h3>Book ID: {{bookId}}</h3>
+    <form #myform="ngForm">
+        <div>
+            <label for="book">Book Name:</label>
+            <input type="text" id="book" name="book" [(ngModel)]="book.book">
+        </div>
+        <div>
+            <label for="author">Author Name:</label>
+            <input type="text" id="author" name="author" [(ngModel)]="book.author">
+        </div>
+        <div>
+            <input type="submit" value="Update Employee" (click)="updateBookById(bookId,myform.value)">
+            <button type="button" (click)="goBack()">Back</button>
+        </div>
+    </form>
+</div>

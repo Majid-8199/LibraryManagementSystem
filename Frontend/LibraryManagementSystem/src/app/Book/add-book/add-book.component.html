@@ -1,0 +1,15 @@
+<div class="container">
+    <form #myform="ngForm" (submit)="addBook(myform.value)">
+        <div>
+            <label for="book">Book Name:</label>
+            <input type="text" id="book" name="book" ngModel required>
+        </div>
+        <div>
+            <label for="author">Author Name:</label>
+            <input type="text" id="author" name="author" ngModel required>
+        </div>
+        <div>
+            <input type="submit" value="Add Book" >
+        </div>
+    </form>
+</div>

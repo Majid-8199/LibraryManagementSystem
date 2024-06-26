@@ -1,0 +1,18 @@
+<div class="head">
+    <h1>Book Details</h1>
+    <div>
+        <button class="deletebutton" (click)="updateBook(book?.bookID)">Update Employee</button>
+        <button class="deletebutton" (click)="deleteBook(book?.bookID)">Delete Employee</button>
+    </div>
+</div>
+<div class="search">
+    <input [(ngModel)]="BookName" type="type" placeholder="Enter Book Name">
+    <button (click)="searchBook(BookName)">Search</button>
+</div>
+<div class="bottom">
+    <ul>
+        <li>Id: {{book?.bookID}}</li>
+        <li>Book Name: {{book?.book}}</li>
+        <li>Author Name: {{book?.author}}</li>
+    </ul>
+</div>

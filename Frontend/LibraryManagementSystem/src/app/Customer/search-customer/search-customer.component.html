@@ -1,0 +1,20 @@
+<div class="head">
+    <h1>Customer Details</h1>
+    <div>
+        <button class="deletebutton" (click)="updateCustomer(customerID)">Update Employee</button>
+        <button class="deletebutton" (click)="deleteCustomer(customerID)">Delete Employee</button>
+    </div>
+</div>
+<div class="search">
+    <input [(ngModel)]="CustomerId" type="number" placeholder="Enter Employee ID">
+    <button (click)="searchCustomer(CustomerId)">Search</button>
+</div>
+<div class="bottom">
+    <ul>
+        <li>Id: {{customer?.customerid}}</li>
+        <li>First Name: {{customer?.firstname}}</li>
+        <li>Last Name: {{customer?.lastname}}</li>
+        <li>Email: {{customer?.email}}</li>
+        <li>Mobile No: {{customer?.ph}}</li>
+    </ul>
+</div>
